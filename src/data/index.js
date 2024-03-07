@@ -29,7 +29,7 @@ export const navBar = [
     },
     {
         title:"محتوا کاربران",
-        link:""
+        link:"/profile"
     },
     {
         title:"مسیر مسطورا",

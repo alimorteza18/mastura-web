@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { navBar } from "../../data/index";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const Navbar = ({setModal}) => {
 
@@ -13,10 +14,10 @@ const Navbar = ({setModal}) => {
             <Image className="cursor-pointer md:hidden flex" src='/images/mastura-logo-white.svg' width={45} height={45} quality={100} alt="mastura logo"/>
             <ul className="md:flex hidden list-none space-x-2 space-x-reverse ">
                 {navBar.map((item, index) => (
-                    <li key={index} className={`hover:text-green-500 cursor-pointer p-2 px-5 rounded-[40px]
+                    <Link key={index} href={item.link} className={`hover:text-green-500 cursor-pointer p-2 px-5 rounded-[40px]
                      ${pathname === item.link ? 'bg-[#3B98691A] text-green-500 hover:text-green-500' : ''}`}>
                         {item.title}
-                    </li>
+                    </Link>
                 ))}
             </ul>
             <button onClick={()=>setModal(true)} className="bg-m-green py-2 px-9 rounded-xl md:flex hidden">
